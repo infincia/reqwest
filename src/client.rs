@@ -497,7 +497,7 @@ impl ClientRef {
 
         loop {
             let res = {
-                info!("Request: {:?} {}", method, url);
+                trace!("Request: {:?} {}", method, url);
                 let mut req = self.hyper.request(method.clone(), url.clone())
                     .headers(headers.clone());
 

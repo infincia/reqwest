@@ -15,7 +15,7 @@ pub struct Response {
 }
 
 pub fn new(res: ::hyper::client::Response, gzip: bool) -> Response {
-    info!("Response: '{}' for {}", res.status, res.url);
+    trace!("Response: '{}' for {}", res.status, res.url);
     Response {
         inner: Decoder::from_hyper_response(res, gzip),
     }
